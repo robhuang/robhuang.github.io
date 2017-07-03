@@ -33,6 +33,38 @@
 
 <body>
   <p>Palm Springs is the best!</p>
+
+  <button type="button" onclick="addToCartClickHandler()">
+    Add to Cart
+  </button>
+
+  <button type="button" onclick="purchaseClickHandler()">
+    Purchase
+  </button>
+
+  <script>
+    function addToCartClickHandler() {
+      fbq('track', 'AddToCart', {
+        value: 1,
+        currency: 'USD',
+        content_ids: '5',
+        content_type: 'product',
+        product_catalog_id: '262400917575596',
+      });
+      alert("Added to Cart");
+    }
+
+    function purchaseClickHandler() {
+      fbq('track', 'Purchase', {
+        value: 1,
+        currency: 'USD',
+        content_ids: '5',
+        content_type: 'product',
+        product_catalog_id: '262400917575596',
+      });
+      alert("Purchased");
+    }
+  </script>
 </body>
 
 </html>
